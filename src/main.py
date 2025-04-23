@@ -6,9 +6,12 @@ import time
 import datetime
 import shutil
 from pathlib import Path
-
-
-import os
+# This script is designed to analyze and clean up cache directories on macOS.
+# It provides detailed information about the size and last access time of files and directories,
+# and allows the user to interactively delete old caches that haven't been accessed in over 12 months.
+# The script uses Python's os and datetime modules to gather information about the file system,
+# and provides a user-friendly interface for cleanup operations.
+# The script is intended to be run from the command line and requires Python 3.x.
 
 def get_dir_size(path):
     if not os.path.isdir(path):
@@ -185,11 +188,5 @@ if __name__ == "__main__":
     print("\nCache analysis and cleanup completed.")
     sys.exit(0)
 # End of script
-# This script is designed to analyze and clean up cache directories on macOS.
-# It provides detailed information about the size and last access time of files and directories,
-# and allows the user to interactively delete old caches that haven't been accessed in over 12 months.
-# The script uses Python's os and datetime modules to gather information about the file system,
-# and provides a user-friendly interface for cleanup operations.
-# The script is intended to be run from the command line and requires Python 3.x.
 
 
