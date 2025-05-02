@@ -3,10 +3,16 @@ install:
 		pip install -r requirements.txt
 
 test:
-	python -m pytest -vvv --cov=hello --cov=greeting \
-		--cov=smath --cov=web .
-	python -m pytest --nbval notebook.ipynb	#tests our jupyter notebook
-	#python -m pytest -v tests/test_web.py #if you just want to test web
+	python -m pytest -vvv --cov=src/main.py --cov=tests  
+
+# test-notebook:
+# 	python -m pytest --nbval notebook.ipynb
+
+# test-web:
+# 	python -m pytest -v tests/test_web.py
+
+# test-all: test test-notebook test-web
+# 	@echo "All tests completed"
 
 debug:
 	python -m pytest -vv --pdb	#Debugger is invoked
@@ -19,10 +25,12 @@ debugthree:
 	python -m pytest -vv --pdb --maxfail=4  # drop to PDB for first three failures
 
 format:
-	black *.py
+	black src/*.py
 
 lint:
-	pylint --disable=R,C *.py
+	pylint --disable=R,C src/*.py
+
+refactor: lint format
 
 run:
 	python src/main.py
