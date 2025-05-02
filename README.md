@@ -1,5 +1,7 @@
 # 🔍 mac-checkcache
 
+[![Mac-CacheCheck](https://github.com/michaelcolletti/mac-checkcache/actions/workflows/python-app.yml/badge.svg)](https://github.com/michaelcolletti/mac-checkcache/actions/workflows/python-app.yml)
+
 <details>
     <summary>A macOS utility script for checking system caches</summary>
     
